@@ -22,7 +22,6 @@ DAEMONS=(@syslog-ng cpufreq laptop-mode @network @net-profiles hal ntpd fam !gdm
 ```
 
 Поведение SLiM настраивается через конфигурационный файл `/etc/slim.conf`.
-<!--more-->
 
 ## Наиболее полезные параметры
 
