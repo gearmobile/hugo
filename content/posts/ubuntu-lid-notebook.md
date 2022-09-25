@@ -58,3 +58,5 @@ HandleLidSwitch=ignore
 ```bash
 sudo systemctl restart systemd-logind.service
 ```
+
+***

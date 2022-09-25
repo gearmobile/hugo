@@ -29,3 +29,5 @@ npm install eslint@8.22.0 --save-exact
 - удалить файл `package-json.lock`
 - установить в `package.json` версию для пакета eslint - "eslint": "8.22.0",
 - заново установить все зависимости проекта - `npm install`
+
+***

@@ -52,3 +52,5 @@ series = []
 
 - Add Selection for Next Occurrence: Alt + E
 - Unselect Occurrence: Alt + Shift + E
+
+***
