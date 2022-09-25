@@ -12,11 +12,11 @@ enableEmoji = true
 # disqusShortname = "yourdiscussshortname"
 
 [params]
-author = "Moe Greene"
+author = "Moe Green"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "Moe Greene's personal blog"
 keywords = "blog,developer,personal"
-info = ["Frontend Developer", "Magician"]
+info = ["Frontend Developer"]
 avatarURL = "images/avatar.jpg"
 #gravatar = "john.doe@example.com"
 dateFormat = "January 2, 2006"

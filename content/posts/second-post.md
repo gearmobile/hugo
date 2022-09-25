@@ -56,17 +56,19 @@ case $1 in
 esac
 ```
 
-- _login_cmd exec /bin/bash -login ~/.xinitrc %session_ - Команда, выполняемая при успешном входе в систему (правильного ввода пары логинпароль). Стоит обратить внимание, что если в системе не установлен _bash_ в качестве _shell_'а, то следует заменить значение _/bin/bash_ на тот _shell_, который используется в системе. Например, в FreeBSD нужно выставить _/bin/sh_ вместо _/bin/bash_. Также можно добавить в строку переменную _%theme_ для задания определенной темы SLiM при его старте.
+- _login_cmd exec /bin/bash -login ~/.xinitrc %session_ - Команда, выполняемая при успешном входе в систему (*правильного ввода пары логин-пароль*). Стоит обратить внимание, что если в системе не установлен _bash_ в качестве _shell_'а, то следует заменить значение _/bin/bash_ на тот _shell_, который используется в системе. Например, в FreeBSD нужно выставить _/bin/sh_ вместо _/bin/bash_. Также можно добавить в строку переменную _%theme_ для задания определенной темы SLiM при его старте.
 - _halt_cmd /sbin/shutdown -h now_ - Команда выключения компьютера из SLiM.
 - _reboot_cmd /sbin/shutdown -r now_ - Команда перезагрузки компьютера из SLiM.
 - _console_cmd /usr/bin/xterm -C -fg white -bg black +sb -T "Console login" -e /bin/sh -c "/bin/cat /etc/issue; exec /bin/login"_ - Запуск терминала консоли прямо из SLiM. Можно задать предпочитаемый эмулятор терминала, заменив xterm на свое, например, gnome-terminal, rxvt, aterm, mrxvt, materm, wterm, gnome-multi-terminal, eterm, rxvt-unicode (urxvt), mlterm, mliterm.
 - _susliend_cmd /usr/sbin/susliend_ - Команда перевода компьютера в спящий режим из SLiM.
-- _numlock on_ - Включение-отключение NumLock клавиатуры при запуске SLiM. Возможные значения параметра - _on_ (включена), _off_ (выключена).
-- _hidecursor false_ - Скрыть-показать курсор при вводе логинапароля. Возможные значения параметра - _true|false_.
+- _numlock on_ - Включение-отключение NumLock клавиатуры при запуске SLiM. Возможные значения параметра - `on` (включена), `off` (выключена).
+- _hidecursor false_ - Скрыть-показать курсор при вводе логина-пароля. Возможные значения параметра - `true|false`.
 
 ## Полезные команды SLiM
 
+{{< notice tip >}}
 Для остановки, перезагрузки, перевода в спящий режим компьютера или запуска эмулятора терминала из SLiM используются команды, представленные ниже.
+{{< /notice >}}
 
 Правильный порядок ввода их следующий:
 
@@ -80,31 +82,3 @@ esac
 3. Перезагрузка компьютера - команда `reboot`;
 4. Перевод компьютера в спящий режим - команда `susliend`;
 5. Перейти в консоль - команда `exit`.
-
-{{< notice note >}}
-Uma nota aqui.
-{{< /notice >}}
-
-{{< notice tip >}}
-Estou lhe dando uma dica.
-{{< /notice >}}
-
-{{< notice example >}}
-Isso é um exemplo.
-{{< /notice >}}
-
-{{< notice question >}}
-Isso é um pergunta?
-{{< /notice >}}
-
-{{< notice info >}}
-Note que essa caixa contém informações.
-{{< /notice >}}
-
-{{< notice warning >}}
-Este é o último aviso!
-{{< /notice >}}
-
-{{< notice error >}}
-Há um erro no seu código.
-{{< /notice >}}
