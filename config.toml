@@ -1,8 +1,8 @@
 baseURL = "http://www.example.com"
-title = "zencoder"
+title = "Dont't panic!"
 theme = "hugo-coder"
 languageCode = "en"
-defaultContentLanguage = "en"
+defaultContentLanguage = "ru"
 paginate = 20
 pygmentsStyle = "bw"
 pygmentsCodeFences = true
@@ -12,9 +12,9 @@ enableEmoji = true
 # disqusShortname = "yourdiscussshortname"
 
 [params]
-author = "Moe Green"
+author = "Muso Verda"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
-description = "Moe Greene's personal blog"
+description = "Muso Verda's personal blog"
 keywords = "blog,developer,personal"
 info = ["Frontend Developer"]
 avatarURL = "images/avatar.jpg"
