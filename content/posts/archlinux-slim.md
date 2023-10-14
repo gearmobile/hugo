@@ -1,25 +1,24 @@
 ---
-author: Moe Green
+author: Muso Verda
 title: "Установка загрузчика SLiM в ArchLinux"
 date: 2013-01-15
 description: Краткий обзор конфигурационного файла. Команды включения, перезагрузки и выключения системы через SLim.
 draft: false
 tags: [archlinux, slim]
-categories: ["linux"]
-series: ["Linux"]
+categories: ["Linux"]
 ---
 
-Установка в ArchLinux стандартная:
+## Установка в ArchLinux стандартная:
 
-{{< highlight powershell >}}
+{{< highlight bash >}}
 $ sudo pacman -S slim
 {{< /highlight >}}
 
 После успешной установки нужно отредактировать файл `/etc/rc.conf`. Если до этого в системе стоял GDM, можно удалить его, а можно закомментировать `gdm` и добавить `slim` в строку:
 
-```powershell
+{{< highlight bash >}}
 DAEMONS=(@syslog-ng cpufreq laptop-mode @network @net-profiles hal ntpd fam !gdmslim !netfs gpm @crond alsa)
-```
+{{< /highlight >}}
 
 Поведение SLiM настраивается через конфигурационный файл `/etc/slim.conf`.
 
@@ -37,7 +36,7 @@ DAEMONS=(@syslog-ng cpufreq laptop-mode @network @net-profiles hal ntpd fam !gdm
 
 После конфигурирования `/etc/slim.conf` нужно отредактировать файл `~/.xinit` следующим образом:
 
-```powershell
+{{< highlight bash >}}
 DEFAULT_SESSION="gnome"
 case $1 in
   kde)
