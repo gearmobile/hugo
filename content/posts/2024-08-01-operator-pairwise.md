@@ -1,5 +1,5 @@
 +++
-title = "Оператор pairwise"
+title = "RxJs - оператор pairwise"
 date = "2024-08-01"
 tags = ["rxjs", "pairwise"]
 categories = ["Development"]
