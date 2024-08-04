@@ -1,5 +1,4 @@
 +++
-author = "Muso Verda"
 title = "Оператор withLatestFrom"
 date = "2024-07-03"
 tags = ["rxjs", "withLatestFrom"]
