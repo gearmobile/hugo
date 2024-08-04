@@ -127,13 +127,13 @@ url = "https://gitlab.com/gearmobile"
 name = "LinkedIn"
 icon = "fa fa-2x fa-linkedin"
 weight = 4
-url = "https://www.linkedin.com/in/johndoe/"
+url = "https://www.linkedin.com/in/gearmobile/"
 
 [[params.social]]
 name = "Medium"
 icon = "fa fa-2x fa-medium"
 weight = 5
-url = "https://medium.com/@johndoe"
+url = "https://medium.com/@gearmobile"
 
 [languages.en]
 languageName = ":uk:"
