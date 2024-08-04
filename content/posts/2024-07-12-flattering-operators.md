@@ -1,5 +1,5 @@
 +++
-title = "Flattering operators"
+title = "Rxjs - flattering operators"
 date = "2024-07-12"
 tags = ["rxjs", "switchmap", "mergemap", "concatmap", "exhaustmap"]
 categories = ["Development"]
