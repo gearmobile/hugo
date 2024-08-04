@@ -1,16 +1,9 @@
 +++
-authors = ["Muso Verda"]
 title = "Prisma - подключить в Nest-проекте"
 date = "2022-02-23"
-description = "Научимся, как устанавливать и подключать в Nest-проекте такой ORM-инструмент, как Prisma."
-tags = [
-    "prisma",
-    "postgres",
-    "nest",
-]
-categories = [
-    "development"
-]
+description = "Научимся, как устанавливать и подключать в Nest-проекте такой ORM-инструмент, как Prisma"
+tags = ["prisma", "postgres", "nest"]
+categories = ["Development"]
 +++
 
 ## Prisma - установка в Nest-проекте
