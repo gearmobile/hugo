@@ -7,13 +7,13 @@ slug = "projects"
 
 ## Angular
 
-### NgRx
+#### NgRx
 
 * [Angular NgRx Fundamentals](https://github.com/My-Angular-Projects/angular-ngrx-fundamentals)
 * [Angular NgRx Signals](https://github.com/My-Angular-Projects/angular-ngrx-signal-app)
 * [Angular NgRx Basics](https://github.com/My-Angular-Projects/angular-ngrx-max)
 
-### Angular CDK Portal
+#### Angular CDK Portal
 
 * [Angular CDK Portal](https://github.com/My-Angular-Projects/angular-cdk-portal)
 
