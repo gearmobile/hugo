@@ -1,5 +1,5 @@
 +++
-title = "About"
+title = "О данном блоге"
 description = "О данном блоге"
 date = "2024-08-04"
 aliases = ["about-me", "contact"]
