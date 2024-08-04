@@ -1,14 +1,14 @@
----
++++
 title: "Оператор withLatestFrom"
-layout: post
-categories: Development
-tags: [rxjs, withLatestFrom]
-share: true
----
-
-### Краткое описание метода
+date = "2024-08-01"
+categories = ["Development"]
+tags: ["rxjs", "withLatestFrom"]
+meta = true
++++
 
 На вход оператора передается список потоков, он на них всех подписывается получает по последнему значению; потом берет значение из родительского потока и соединяет это все в один поток.
+
+<!--more-->
 
 ### Практическое применение
 
