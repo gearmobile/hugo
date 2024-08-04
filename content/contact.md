@@ -3,4 +3,4 @@ title = "Contact"
 slug = "contact"
 +++
 
-Follow me, @gearmobile.
+Моя телега - @gearmobile.

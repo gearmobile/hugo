@@ -1,5 +1,5 @@
 +++
-title = "Проекты"
+title = "Projects"
 slug = "projects"
 +++
 
