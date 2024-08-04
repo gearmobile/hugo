@@ -1,5 +1,5 @@
 +++
-title = "Оператор withLatestFrom"
+title = "RxJs - оператор withLatestFrom"
 date = "2024-07-03"
 tags = ["rxjs", "withLatestFrom"]
 categories = ["Development"]
