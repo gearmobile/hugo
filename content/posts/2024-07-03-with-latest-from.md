@@ -1,7 +1,7 @@
 +++
 author = "Muso Verda"
 title = "Оператор withLatestFrom"
-date = "2024-08-01"
+date = "2024-07-03"
 tags = ["rxjs", "withLatestFrom"]
 categories = ["Development"]
 meta = true
@@ -21,7 +21,7 @@ hello$.pipe(
 )
 ```
 
-... то есть - в данном случае, если значение пришло из родительского потока _hello$_ - оператор _withLatestFrom_ заберет значение из метода сервиса _isEnabled_ и вернет - поток из этих двух значений.
+... то есть - в данном случае, если значение пришло из родительского потока `hello$` - оператор `withLatestFrom` заберет значение из метода сервиса `isEnabled` и вернет - поток из этих двух значений.
 
 Пример реальный, из эффекта NgRx:
 
@@ -39,9 +39,9 @@ export const saveCounter = createEffect(
 );
 ```
 
-... здесь запись _ofType(CounterActions.incrementCounter, CounterActions.decrementCounter)_, трактуется как ИЛИ; то есть, оператор _ofType_ будет фильтровать поток _actions$_ на экшен _incrementCounter_ или экшен _decrementCounter_.
+... здесь запись `ofType(CounterActions.incrementCounter, CounterActions.decrementCounter)`, трактуется как ИЛИ; то есть, оператор `ofType` будет фильтровать поток `actions$` на экшен `incrementCounter` или экшен `decrementCounter`.
 
-Оператор _withLatestFrom_ здесь также - подписан и слушает родительский поток _actions$_. Если фильтр _ofType_ сработает - из потока _actions$_ прийдет евент в оператор _withLatestFrom_, поэтому в свою очередь оператор _withLatestFrom_ заберет значение из потока _countSelect_, объединит оба значения и вернет новый поток - в евентом, содержащим оба эти значения - _([payload, count])_.
+Оператор `withLatestFrom` здесь также - подписан и слушает родительский поток `actions$`. Если фильтр `ofType` сработает - из потока `actions$` прийдет евент в оператор `withLatestFrom`, поэтому в свою очередь оператор `withLatestFrom` заберет значение из потока `countSelect`, объединит оба значения и вернет новый поток - в евентом, содержащим оба эти значения - `([payload, count])`.
 
 ### Полезные ссылки
 
