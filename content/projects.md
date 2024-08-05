@@ -9,13 +9,13 @@ slug = "projects"
 
 #### NgRx
 
-* [Angular NgRx Fundamentals](https://github.com/My-Angular-Projects/angular-ngrx-fundamentals)
-* [Angular NgRx Signals](https://github.com/My-Angular-Projects/angular-ngrx-signal-app)
-* [Angular NgRx Basics](https://github.com/My-Angular-Projects/angular-ngrx-max)
+* [NgRx Basics](https://github.com/My-Angular-Projects/angular-ngrx-max)
+* [NgRx Fundamentals](https://github.com/My-Angular-Projects/angular-ngrx-fundamentals)
+* [NgRx Signals](https://github.com/My-Angular-Projects/angular-ngrx-signal-app)
 
 #### Angular CDK Portal
 
-* [Angular CDK Portal](https://github.com/My-Angular-Projects/angular-cdk-portal)
+* [CDK Portal](https://github.com/My-Angular-Projects/angular-cdk-portal)
 
 ## Github Actions
 

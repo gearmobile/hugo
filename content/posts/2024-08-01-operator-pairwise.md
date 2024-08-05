@@ -32,6 +32,23 @@ interval(1000)
 
 Такое поведение может привести к путанице, поскольку не будет вывода и ошибок, но поток может работать не так, как предполагалось, или ожидать больше значений.
 
+## Пример из практики
+
+```typescript
+// Регистрируем явный вход (страница входа, регистрация и т.п.)
+this._session.state$.pipe(
+  startWith(null),
+  pairwise(),
+  takeUntil(this._destroy$)
+).subscribe(([prevState, nextState]) => {
+  if (nextState === 'opened' && prevState === 'closed') {
+    this.store.dispatch(AuthActions.LoggedIn);
+  }
+});
+```
+
+Выше приведен реальный пример из практики коммерческой разработки. Здесь применяется `pairwise()` для того, чтобы получить из потока `this._session.state$` значения, которые потом при помощи этого оператора можно сгрупировать в пары `.subscribe(([prevState, nextState])` и затем - сравнить значения этой пары - `if (nextState === 'opened' && prevState === 'closed')`.
+
 ## Ссылки
 
 Marble Diagram - [Operator pairwise](https://rxjs.dev/api/operators/pairwise)
