@@ -36,13 +36,13 @@ type PickedBulochka = {
 #### Реальный пример из практики:
 
 ```typescript
-private readonly _withoutAccount: Pick<Account, 'displayedName'> & { id: 'without' } = {
+private readonly _withoutAccount: Pick<Account, 'displayedName'> & { id: string } = {
     id: 'without',
     displayedName: 'Здесь нет моего договора'
 };
 ```
 
-... здесь Pick обращается к свойству `displayedName` класса Account; и в качестве свойства класса выступает геттер:
+... здесь Pick обращается к свойству `displayedName` класса `Account`; и в качестве свойства класса выступает геттер `displayedName`:
 
 ```typescript
 export class Account implements IAccountExtended {
@@ -110,8 +110,22 @@ type IApiModal = Omit<IModal, 'pictures' | 'attachments'> & {
 };
 ```
 
-... здесь при помощи утилиты Omit из интерфейса `IModal` забираются все свойства, кроме `pictures` и `attachments`. Далее видим еще один интересный инструмент TS - пересечение [Intersection][1], обозначаемое символом `&`. При помощи [Interseption][2] в тип `IApiModal` добавляются еще два поля - `pictures` и `attachments`, взятые из литерала объекта. В результате тип `IApiModal` получится комбинацией из части интерфейса `IModal` и литерала объекта.
+... здесь при помощи утилиты Omit из интерфейса `IModal` забираются все свойства, кроме `pictures` и `attachments`.
 
+Далее видим еще один интересный инструмент TS - пересечение [Intersection][1], обозначаемое символом `&`. При помощи [Interseption][2] в тип `IApiModal` добавляются еще два поля - `pictures` и `attachments`, взятые из литерала объекта.
+
+Если сказать точнее - поля `pictures` и `attachments` - попадают в тип `IApiModal` с новыми типами, нежели какие у них были в интерфейсе `IModal`.
+
+Можно сделать красивее:
+
+```typescript
+type Modify<T, R> = Omit<T, keyof R> & R;
+
+type ApiModal = Modify<IModal, {
+    pictures?: IApiPictureCollectionItem[];
+    attachments: ApiAttachment[];
+};
+```
 
 ### Ссылки
 
