@@ -1,8 +1,8 @@
 +++
-title = "Prisma - подключить в Nest-проекте"
+title = "Nestjs - подключить Prisma в Nest-проекте"
 date = "2022-02-23"
 description = "Научимся, как устанавливать и подключать в Nest-проекте такой ORM-инструмент, как Prisma"
-tags = ["prisma", "postgres", "nest"]
+tags = ["prisma", "postgres", "nestjs"]
 categories = ["Development"]
 +++
 
