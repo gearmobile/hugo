@@ -1,12 +1,12 @@
 +++
 title = "TS - Readonly, Required, Partial"
 date = "2024-08-06"
-tags = ["typescript", "utility types", "readonly", "required", "partial"]
+tags = ["typescript", "utility types"]
 categories = ["Development"]
 meta = true
 +++
 
-### Утилита Readonly
+### Сопоставимый тип Readonly
 
 Просто делает все поля объекта как `readonly`:
 
@@ -37,6 +37,19 @@ const bulochka = {
 }
 ```
 
+Наиболее частое применение данного типа можно встретить при определении функций и методов, параметры которых принадлежат к объектным типам. Поскольку объектные типы передаются по ссылке, то с высокой долей вероятности случайное изменение члена объекта может привести к непредсказуемым последствиям:
+
+```typescript
+/**
+ * Надежная функция, защищающая свои
+ * параметры от изменения, не требуя описания
+ * нового неизменяемого типа.
+ */
+function immutableAction(person: Readonly<IPerson>) {
+  person.name = 'NewName'; // Error -> Cannot assign to 'name' because it is a read-only property.
+}
+```
+
 #### Примеры из реальной практики
 
 ```typescript
@@ -56,7 +69,7 @@ private filterGroups(groups: Readonly<IFaqGroup[]>, filter: Readonly<IFaqFilter>
 }
 ```
 
-### Утилита Required
+### Сопоставимый тип Required
 
 ... просто делает все поля объекта **обязательными**; такой пример:
 
@@ -81,9 +94,9 @@ const readonlyBulochka: Required<Bulochka> = {
 Property 'brand' is missing in type '{ price: number; weight: number; lenght: number; }' but required in type 'Required<Bulochka>'.
 ```
 
-###  Утилита Partial
+### Сопоставимый тип Partial
 
-Противоположность утилите Required - делает поля объекта **не обязательными**. Такой пример ошибкой не будет:
+Противоположность `Required` - делает поля объекта **не обязательными**, добавляет членам объекта модификатор `?`. Такой пример ошибкой **не** будет:
 
 ```typescript
 interface Bulochka {

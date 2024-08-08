@@ -1,7 +1,7 @@
 +++
 title = "TS - Pick и Omit"
 date = "2024-08-05"
-tags = ["typescript", "utility types", "pick", "omit"]
+tags = ["typescript", "utility types"]
 categories = ["Development"]
 meta = true
 +++
