@@ -1,7 +1,7 @@
 +++
-title = "Соглашение о коммитах"
+title = "Git - соглашение о коммитах"
 date = "2024-08-07"
-tags = ["typescript"]
+tags = ["git", "commit"]
 categories = ["Development"]
 meta = true
 +++
