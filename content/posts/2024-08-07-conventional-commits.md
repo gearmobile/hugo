@@ -42,5 +42,5 @@ meta = true
 
 ***
 
-[1]: (https://www.conventionalcommits.org/ru/v1.0.0/) "Соглашение о коммитах"
-[2]: (https://gitmoji.dev/) "An emoji guide for your commit messages"
+[1]: https://www.conventionalcommits.org/ru/v1.0.0 "Соглашение о коммитах"
+[2]: https://gitmoji.dev "An emoji guide for your commit messages"
