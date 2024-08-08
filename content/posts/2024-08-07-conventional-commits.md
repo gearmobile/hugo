@@ -27,18 +27,18 @@ meta = true
 
 ### Примеры
 
-Ниже приведены два ресурса как практический пример использования «Соглашения о коммитах»[1]:
+Ниже приведены два ресурса как практический пример использования [«Соглашения о коммитах»][1]:
 
 * [GitHub](https://github.com/conventional-commits/conventionalcommits.org/commits/master/)
 * [Taiga UI](https://github.com/taiga-family/taiga-ui/commits/main/)
 
 ### Webstorm / PhpStorm
 
-Плагин для Webstorm, доступный по ссылке [Conventional Commit](https://plugins.jetbrains.com/plugin/13389-conventional-commit). Целью плагина является обеспечение автокомплита для «Соглашений о коммитах»[1], также называемых семантическими коммитами, в диалоге VCS Commit.
+Плагин для Webstorm, доступный по ссылке [Conventional Commit](https://plugins.jetbrains.com/plugin/13389-conventional-commit). Целью плагина является обеспечение автокомплита для [«Соглашений о коммитах»][1], также называемых семантическими коммитами, в диалоге VCS Commit.
 
 ### VSCode
 
-Для редактора VSCode также имеется плагин [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits). Поможет заполнить сообщение коммита в соответствии со спецификацией «Соглашения о коммитах»[1]. Имеется поддержка gitmojis[2] - на сайте можно быстро и удобно подобрать нужный вариант эмоджи для текущего коммита.
+Для редактора VSCode также имеется плагин [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits). Поможет заполнить сообщение коммита в соответствии со спецификацией [«Соглашения о коммитах»][1]. Имеется поддержка [gitmojis][2] - на сайте можно быстро и удобно подобрать нужный вариант эмоджи для текущего коммита.
 
 ***
 
