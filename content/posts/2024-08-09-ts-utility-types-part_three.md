@@ -7,12 +7,13 @@ draft = true
 +++
 
 Record (запись) помогает определять словари, также называемые парами ключ/значение, с фиксированным типом для ключей и фиксированным типом для значений.
-Другими словами, тип Record позволяет определить тип словаря, то есть имена и типы его ключей.
+Другими словами, тип `Record` позволяет определить тип словаря, то есть имена и типы его ключей.
 
-Сила типа Record в том, что с его помощью можно моделировать словари с фиксированным числом ключей.
+Сила типа `Record` в том, что с его помощью можно моделировать словари с фиксированным числом ключей.
+
 В TypeScript Record имеют фиксированное количество членов (т.е. фиксированное количество полей), и эти члены обычно идентифицируются по имени. Это основное отличие записей от кортежей.
 
-Record<Keys, Type> - строит **объектный** тип, ключами свойств которого являются **Keys**, а значениями свойств — **Type**.
+Record<Keys, Type> - строит **объектный** тип, ключами свойств которого являются `Keys`, а значениями свойств — `Type`.
 
 ## Record для создания модели университетских курсов
 
@@ -136,3 +137,17 @@ type booleanUser = Record<object, TUser>; // Type 'object' does not satisfy the 
 ## Allowed Types for Values
 
 Types for values can be of any type. objects and function types are common. This means, they can also be React components. Below, we see a React example.
+
+For example, the record parameter is a bit easier to grasp than the index signature parameter:
+
+```typescript
+function logSalary1(salary: Record<string, number>) {
+  console.log(salary)
+}
+
+function logSalary2(salary: { [key: string]: number }) {
+  console.log(salary)
+}
+```
+
+[](https://dmitripavlutin.com/typescript-record/)
