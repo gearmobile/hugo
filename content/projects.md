@@ -19,9 +19,7 @@ slug = "projects"
 
 #### SSR / PWA
 
-* -
-
-####
+#### WebWorker / ServiceWorker
 
 ## Github Actions
 
