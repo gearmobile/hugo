@@ -3,19 +3,18 @@ title = "TS - Record"
 date = "2024-08-09"
 tags = ["typescript", "utility types"]
 categories = ["Development"]
-draft = true
 +++
 
-Record (запись) помогает определять словари, также называемые парами ключ/значение, с фиксированным типом для ключей и фиксированным типом для значений.
-Другими словами, тип `Record` позволяет определить тип словаря, то есть имена и типы его ключей.
+Record (запись) помогает создавать [словари][1], также называемые парами ключ/значение, с **фиксированным типом** для ключей и **фиксированным типом** для значений.
+Другими словами, тип `Record` позволяет определить тип словаря - то есть имена и типы его ключей.
 
 Сила типа `Record` в том, что с его помощью можно моделировать словари с фиксированным числом ключей.
 
-В TypeScript Record имеют фиксированное количество членов (т.е. фиксированное количество полей), и эти члены обычно идентифицируются по имени. Это основное отличие записей от кортежей.
-
-Record<Keys, Type> - строит **объектный** тип, ключами свойств которого являются `Keys`, а значениями свойств — `Type`.
+Анатомия Record - `Record<Keys, Type>` - строит **объектный** тип, ключами свойств которого являются `Keys`, а значениями свойств — `Type`.
 
 ## Record для создания модели университетских курсов
+
+Ниже приведе пример создания словаря при помощи Record:
 
 ```typescript
 type Course = "Computer Science" | "Mathematics" | "Literature";
@@ -71,7 +70,7 @@ const courses: Record<Course, CourseInfo> = {
 ```typescript
 Property 'Literature' is missing in type '{ "Computer Science": { professor: string; cfu: number; }; Mathematics: { professor: string; cfu: number; }; }' but required in type 'Record<Course, CourseInfo>'.(2741)
 ```
-Также Typescript проверяет, чтобы в создаваемом словаре не было ключей `Keys`, которые не определены заранее. То есть, если сделать так:
+Также Typescript проверяет, чтобы в создаваемом словаре не было ключей `Keys`, которые **не определены** заранее. То есть, если сделать так:
 
 ```typescript
 const courses: Record<Course, CourseInfo> = {
@@ -121,9 +120,9 @@ courses['Mathematics']
 }
 ```
 
-## Allowed Types for Keys
+## Допустимые типы для ключей
 
-The types for `Keys` can only be `number`, `string` and `symbol`. Types other than these throw `2344` error at definition:
+Типами для ключей `Keys` в Record могут быть только - `number`, `string` и `symbol`. В приведенном ниже примере использование для ключа `Key` типа `boolean` или `object` приведет к ошибке:
 
 ```typescript
 type numberedUser = Record<number, TUser>;
@@ -134,20 +133,10 @@ type booleanUser = Record<boolean, TUser>; // Type 'boolean' does not satisfy th
 type booleanUser = Record<object, TUser>; // Type 'object' does not satisfy the constraint 'string | number | symbol'
 ```
 
-## Allowed Types for Values
+## Допустимые типы для значений
 
-Types for values can be of any type. objects and function types are common. This means, they can also be React components. Below, we see a React example.
+Для значений `Type` допустим любой тип данных - наиболее частый случай, это объекты или функции. Это означает, что значениями могут быть компоненты.
 
-For example, the record parameter is a bit easier to grasp than the index signature parameter:
+***
 
-```typescript
-function logSalary1(salary: Record<string, number>) {
-  console.log(salary)
-}
-
-function logSalary2(salary: { [key: string]: number }) {
-  console.log(salary)
-}
-```
-
-[](https://dmitripavlutin.com/typescript-record/)
+[1]: https://education.yandex.ru/handbook/algorithms/article/slovar "Словарь"
