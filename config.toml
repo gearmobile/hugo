@@ -22,6 +22,7 @@ avatarURL = "images/avatar.jpg"
 # gravatar = "john.doe@example.com"
 dateFormat = "January 2, 2006"
 since = 2024
+
 # Git Commit in Footer, uncomment the line below to enable it
 commit = "https://github.com/luizdepra/hugo-coder/tree/"
 
@@ -104,6 +105,9 @@ scriptsrc = [
 prefetchsrc = ["'self'"]
 # connect-src directive – defines valid targets for to XMLHttpRequest (AJAX), WebSockets or EventSource
 connectsrc = ["'self'", "https://www.google-analytics.com"]
+
+[markup.highlight]
+style = "gruvbox-light"
 
 [taxonomies]
 category = "categories"
