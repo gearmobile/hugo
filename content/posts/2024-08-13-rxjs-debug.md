@@ -9,7 +9,7 @@ categories = ["Development"]
 
 ```typescript
 service.getSomeObservable().subscribe(data => {
-  console.log(data);
+    console.log(data);
 });
 ```
 
@@ -87,6 +87,10 @@ this.continent$ = this.continentSelect.valueChanges.pipe(
     map(([continent]) => continent.substring(0, 3).toUpperCase())
 );
 ```
+
+## Итог
+
+Дебажить RxJs можно двумя способами - `console.log` и `tap`; выбор инструмента зависит от контекста задачи.
 
 ## Ссылка
 

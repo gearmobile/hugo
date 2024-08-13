@@ -107,7 +107,7 @@ prefetchsrc = ["'self'"]
 connectsrc = ["'self'", "https://www.google-analytics.com"]
 
 [markup.highlight]
-style = "gruvbox"
+style = "nordic"
 
 [taxonomies]
 category = "categories"
