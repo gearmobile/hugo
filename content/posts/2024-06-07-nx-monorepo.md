@@ -12,10 +12,10 @@ categories = ["Development"]
 
 ## Пошаговая инструкция
 
-Устанавливаем Nx глобально в системе - для более удобной последующей работы:
+Устанавливаем Nx глобально в системе - для более удобной последующей работы [Installing Nx Globally](https://nx.dev/getting-started/installation#installing-nx-globally):
 
 ```bash
-nx globally npm i -g nx
+npm add --global nx@latest
 ```
 
 Переходим к процессу развертывания - инициализируем новый workspace командой [Installation](https://nx.dev/getting-started/installation):
@@ -127,3 +127,7 @@ import { sharedLib } from "@my-project/shared-lib";
 Как проверка работоспособности первоначального решения - привожу ссылку на учебный проект [Task Manager](https://github.com/My-Angular-Projects/task-manager).
 
 На момент написания статьи - проект находится в *стадии разработки*.
+
+## UPD
+
+Проект Nx находится в активной разработке и половина описанных шагов (на момент написания данного поста) - уже не актуальны на число 15.08.2024.
