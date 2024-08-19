@@ -14,6 +14,8 @@ Record (запись) помогает создавать [словари][1], �
 
 ## Record для создания модели университетских курсов
 
+Еще раз - `Record` позволяет создавать объекты с динамической структурой, когда мы добавляем в них поля **во время исполнения программы**; с аннотацией `type` можно строить динамические `key/value` (*вообще можно любую структуру*): у интерфейсов основа - это всегда hard-coded объект.
+
 Ниже приведе пример создания словаря при помощи Record:
 
 ```typescript
@@ -137,6 +139,108 @@ type booleanUser = Record<object, TUser>; // Type 'object' does not satisfy the 
 
 Для значений `Type` допустим любой тип данных - наиболее частый случай, это объекты или функции. Это означает, что значениями могут быть компоненты.
 
+## Примеры из практики
+
+Пример ниже - `Record` имеет в качестве ключа `string`, а в качестве значения ключа - целый набор типов:
+
+```typescript
+private get params(): Record<string, string | number | boolean | ReadonlyArray<string | number | boolean>> {
+    return {
+        account: this.account,
+        department: this.department,
+        documentNumber: this.document.number,
+        start: this.period.startDate,
+        end: this.period.endDate,
+        search: this.search,
+        status: this.status
+    };
+}
+```
+
+... обратим внимание на запись `ReadonlyArray<string | number | boolean>` - в данном случае расширенный тип `ReadonlyArray<T>` предназначен для создания [неизменяемого массива][2]; более того, у такого массива отсутствуют методы для добавления, удаления или изменения элементов такого массива, в отличие от обычного массива `Array<T>`.
+
+Еще один пример динамического создания объекта:
+
+```typescript
+public readonly refs: {
+    meterStates: typeof CspMesMeterState;
+    meterStateNames: Record<CspMesMeterState, string>;
+} = {
+    meterStates: CspMesMeterState,
+    meterStateNames: {
+        [CspMesMeterState.OK]: 'Работает, нет несоответствия',
+        [CspMesMeterState.DEFECTIVE_METER]: 'Неисправный ЭС',
+        [CspMesMeterState.ABSENT_METER]: 'Отсутствует ЭС',
+        [CspMesMeterState.THEFT_METER]: 'Хищение ЭС',
+        [CspMesMeterState.DEFECTIVE_SYSTEM]: 'Система неисправна',
+        [CspMesMeterState.VIOLATION_ACT]: 'Нарушение учета с Актом',
+        [CspMesMeterState.EXPIRED_INTERVAL]: 'Истек срок МПИ',
+        [CspMesMeterState.DEFECTIVE_METER_WITH_EXPIRED_INTERVAL]: 'Нерабочий ПУ с истекшим сроком МПИ'
+    }
+};
+```
+
+... здесь `CspMesMeterState` является перечисляемым типом enum. Думаю, данный кейс является ярким примером создания словаря - четко видно структуру.
+
+Достаточно интересный пример, когда используются сразу два типа - `Partial` и `Record`:
+
+```typescript
+public readonly contactTypes: {
+    [key in AccountUnit]: Partial<Record<ContactType, string>>;
+} = {
+    [AccountUnit.supervisor]: {
+        [ContactType.ADDRESS]: 'Адрес отделения',
+        [ContactType.EMAIL]: 'Электронная почта отделения',
+        [ContactType.PHONE]: 'Телефон отделения'
+    },
+    [AccountUnit.curator]: {
+        [ContactType.ADDRESS]: 'Адрес куратора',
+        [ContactType.EMAIL]: 'Электронная почта куратора',
+        [ContactType.PHONE]: 'Телефон куратора'
+    }
+};
+```
+
+... здесь `Partial<Record<ContactType, string>>` - здесь динамически создается объект `Record<ContactType, string>`, у которого все поля делаются необязательными при помощи типа `Partial`.
+
+В заключение еще пример - ничего особенного:
+
+```typescript
+private static readonly refs: Record<BankingProducts, ProductCard> = {
+    [BankingProducts.virtualCard]: {
+        title: 'Виртуальная карта',
+        button: {
+            label: 'Оформить',
+            path: ['/credit-calc']
+        }
+    },
+    [BankingProducts.mortgage]: {
+        title: 'Заявка на ипотеку',
+        button: {
+            label: 'Заполнить анкету',
+            path: ['/', APPEALS_ROUTE.root, APPEALS_ROUTE.predefined.mortgage]
+        }
+    },
+    [BankingProducts.creditCalc]: {
+        title: 'Расчёт кредита',
+        button: {
+            label: 'Рассчитать',
+            path: [`${PARTNERS_ROUTE_PARAMS.products}/${BANKING_PRODUCTS_ROUTE_PARAMS.creditCalc}`]
+        }
+    },
+    [BankingProducts.pacl]: {
+        title: 'Предодобренный кредит',
+        button: {
+            label: 'Подробнее',
+            path: ['/', VTB_ROUTE.root, VTB_ROUTE.pacls]
+        }
+    }
+};
+```
+
+... `BankingProducts` - это enum; `ProductCard` - это интерфейс.
+
 ***
 
 [1]: https://education.yandex.ru/handbook/algorithms/article/slovar "Словарь"
+[2]: https://scriptdev.ru/guide/046/#readonlyarray "ReadonlyArray (неизменяемый массив)"
