@@ -17,19 +17,11 @@ slug = "projects"
 
 * [CDK Portal](https://github.com/My-Angular-Projects/angular-cdk-portal)
 
-#### SSR / PWA
-
-* планируется
-
-#### WebWorker / ServiceWorker
-
-* планируется
-
 ## Github Actions
 
 * [Github Actions Example](https://github.com/Angular-New/github-actions_example)
 
-## Vue.js v2
+## Vue.js
 
 * [Integer App](https://github.com/LaboratoryVue/integer-app)
 * [Meetup App](https://github.com/gearmobile/ready-vuejs/tree/master/meetup-app)
